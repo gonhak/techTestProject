@@ -1,0 +1,85 @@
+// Zerowanie styli w przypadku korzystania z narzędzia jakim jest bootstrap który automatycznie dodaje marginesy i paddingi jest to w pewnym sesnie dobra praktyka pisania kody patrząc na to ,że na samym początku bootstrap może się nie znajdować w projekcie lecz wraz z jego postępem może się on w nim znaleźć przez co lepiej z góry mieć już tak zwane style zerujące zawarte w naszej stronie.
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    // Rozmiar fonta podajemy procentowo dzięki późniejszym przeliczenią wychodzi że 2.2 jednostki rem jest równa 22px jest to robimy to ze względu na to że pixele nie są responsywne względem urządzeń mobilnych i będą one zawsze stałe a rem'y i em'y dostosują się do preferencji użytkownika dotyczących teksty przykładowo osób starszy posiadających powiększony tekst na telefonach
+    font-size: 62.5%;
+}
+
+body {
+    // Standardowe style dla naszego body
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    font-family: 'Dancing Script',
+        cursive;
+    // Wypozycjonowanie elementów zawartych na naszej stronie
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    // Dajemy 90% rodzica danego elementu aby nie musieć wykorzystywać marginesów i paddingów 
+    width: 80%;
+    height: 80%;
+
+    // Odwołujemy się za pomocą metodologi BEM która współpracuje z scss'em który umożliwa nam łatwiejsze i bardziej intuicyjne odowływanie się do dzieci naszego elementu co jest bardzo przydatne przy większych projektach i utrzymuje on estetykę naszego kodu przez co jest potem łatwiej drugiemu programiście odnaleźć się za pomocą dev tool'sów i czytanie plików stylujących które przy w miarę dużych projektach zawierają po ponad 1000 linijek kodu.
+
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+
+        // Ogólne style dla naszych box'ów z tekstem które potem będziemy rozmieszczać za pomocą position absolute względem ich rodzica. Stosujemy takie metody aby nie pisać dwa razy bądź wiele razy tego samego kodu więc wszystkie powtarzające się style umieszczamy w jednej klasie i nadajemy je na dane elementy strony w programowaniu ta technika jest potocznie nazywana DRY czyli Dont Repeat Yourself 
+
+        &__box {
+            position: absolute;
+            width: 45%;
+            padding: 2em;
+            background-color: #E0C9A6;
+            box-shadow: 0px 0px 10px black inset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            &__text {
+                width: 75%;
+                text-align: center;
+                font-size: 1.6rem;
+            }
+
+            // Prawe segmenty kontenera
+
+            &--rightTop {
+                right: 0px;
+                top: 0px;
+            }
+
+            &--rightBottom {
+                right: 0px;
+                bottom: 0px;
+            }
+
+            // Lewe segmenty kontenera
+
+            &--leftTop {
+                left: 0px;
+                top: 0px;
+            }
+
+            &--leftBottom {
+                left: 0px;
+                bottom: 0px;
+            }
+        }
+    }
+}

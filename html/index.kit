@@ -1,0 +1,24 @@
+<!-- Zamiast zwykłego pliku html używamy plików z rozszerzeniem .kit co umożliwia nam stałe segmenty strony przykładowo nawigacje której kod będzie w osobnym pliku lecz nasze oprogramowanie będzie je importować i przerabiać do tego w którym umieścimy nasz import. Umożliwia nam to łatwiejsze poruszanie się w kodzie większej strony i zamiast szukać danego segmentu w ponad tysięcznym kodzie będziemy w stanie go edytować jako osobny plik -->
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies</title>
+    <!-- Google fonts only for estetic purposes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- Zminifikowane Style Css po bezpośrednim przepuszczeniu ich przez program podpięty do programu -->
+    <link rel="stylesheet" href="dist\css\main.min.css">
+</head>
+
+<body>
+    <!-- Poniżej mamy przykład zastosowania plików o rozszerzeniu kit i dzięki temu możemy łatwiej połapać się w strukturze strony i przykładowo przy edycji jakieś sekcji bądź powielania jej na większej ilości podstron używamy tylko includa zamiast powtarzać i kopiować ten kod -->
+
+    <!-- @include 'indexMain.kit' -->
+</body>
+
+</html>
